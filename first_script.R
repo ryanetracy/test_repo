@@ -31,3 +31,16 @@ sd2 <- sd(df$exam[df$uni == 1])
 
 get_cohen_d(m1, m2, sd1, sd2)
 
+
+df$uni <- factor(df$uni, levels = c(0, 1))
+
+mod2 <- lm(exam ~ lectures * uni, data = df)
+summary(mod2)
+
+ggplot(df, aes(lectures, exam, color = uni)) +
+  geom_point(shape = 7,
+             alpha = .8,
+             position = position_jitter(.05, 0)) +
+  geom_smooth(method = 'lm') +
+  scale_color_manual(values = c('turquoise2', 'black')) +
+  theme_light()
