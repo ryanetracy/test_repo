@@ -46,3 +46,6 @@ ggplot(df, aes(lectures, exam, color = uni)) +
   theme_light()
 
 # add a comment
+
+m3 <- glm(uni ~ exam + lectures, family = "binomial", data = df)
+summary(m3)
