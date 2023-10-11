@@ -50,3 +50,4 @@ ggplot(df, aes(lectures, exam, color = uni)) +
 m3 <- glm(uni ~ exam + lectures, family = "binomial", data = df)
 summary(m3)
 
+# another test
