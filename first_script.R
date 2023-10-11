@@ -44,3 +44,5 @@ ggplot(df, aes(lectures, exam, color = uni)) +
   geom_smooth(method = 'lm') +
   scale_color_manual(values = c('turquoise2', 'black')) +
   theme_light()
+
+# add a comment
